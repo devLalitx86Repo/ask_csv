@@ -32,7 +32,8 @@ class CSVAnalyzer:
             self.agent = create_csv_agent(
                 llm,
                 self.temp_file_path,
-                verbose=True
+                verbose=True,
+                allow_dangerous_code=True  # Allow Python code execution
             )
             return True, "Agent initialized successfully"
         except Exception as e:
